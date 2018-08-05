@@ -1,0 +1,46 @@
+.ngw-wizard--countainer {}
+
+.ngw-wizard--header {
+  // display: flex;
+  // justify-content: space-between;
+  height: 34px;
+  position: relative;
+}
+
+.ngw-circle--countainer {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.ngw-wizard--body {}
+
+.ngw-wizard--footer {}
+
+.ngw-circle-nd-line--countainer {
+  position: relative;
+}
+
+.ngw-circle {
+  display: inline-block;
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, .26);
+  border: 2px solid;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+.ngw-line {
+  z-index: 1;
+  position: absolute;
+  display: inline-block;
+  color: rgba(0, 0, 0, .26);
+  top: 50%;
+  width: calc(100% - 4px);
+  border: 1px solid;
+}

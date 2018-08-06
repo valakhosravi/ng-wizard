@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 
 export class WizardComponent implements OnInit {
 
-  private wizardStepList: NodeList[];
+  private wizardStepList: any[];
   private currentStepNumber = 0;
   @ViewChild('contentWrapper') content: ElementRef;
   constructor() { }
@@ -20,26 +20,27 @@ export class WizardComponent implements OnInit {
   nextStep(): void {
     if (this.currentStepNumber < this.wizardStepList.length - 1) {
       this.currentStepNumber++;
-      $('.ng-wizard-step--countainer').animate(
-        {
-          'margin-left': -50 * this.currentStepNumber + '%'
-        }
-      );
+      this.moveStep();
     }
   }
 
   previousStep(): void {
     if (this.currentStepNumber > 0) {
       this.currentStepNumber--;
-      $('.ng-wizard-step--countainer').animate(
-        {
-          'margin-left': -50 * this.currentStepNumber + '%'
-        }
-      );
+      this.moveStep();
     }
   }
 
-  jumpToStep(stepNumber: number): void {
+  private moveStep() {
+    console.log(this.wizardStepList);
+    $('.ng-wizard-step--countainer').animate(
+      {
+        'margin-left': -50 * this.currentStepNumber + '%'
+      },
+    );
+  }
 
+  jumpToStep(stepNumber: number): void {
+    // think about it
   }
 }

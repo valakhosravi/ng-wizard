@@ -9,7 +9,7 @@
 }
 
 .ngw-circle--countainer {
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   width: 100%;
   justify-content: space-between;
@@ -25,6 +25,7 @@
 }
 
 .ngw-circle {
+  transition: .4s color;
   display: inline-block;
   background-color: #ffffff;
   color: rgba(0, 0, 0, .26);
@@ -46,7 +47,28 @@
   border: 1px solid;
 }
 
+.ngw-line-progress {
+  transition: .4s width;
+  z-index: 2;
+  position: absolute;
+  display: inline-block;
+  color: rgba(0, 0, 0, .26);
+  top: 50%;
+  border: 1px solid;
+  color: #64DD17;
+}
+
 .ng-wizard-step--countainer {
   display: flex;
   justify-content: space-between;
 }
+
+.active {
+  color: #64DD17;
+}
+
+.current {
+  color: #76FF03;
+}
+
+error {}

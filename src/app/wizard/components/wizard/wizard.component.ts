@@ -1,15 +1,15 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { WizardStepComponent } from '../wizard-step/wizard-step.component';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'ng-wizard',
   templateUrl: './wizard.component.html',
-  styleUrls: ['./wizard.component.scss']
+  styleUrls: ['./wizard.component.scss'],
 })
 
-export class WizardComponent implements OnInit, AfterViewInit {
+export class WizardComponent implements OnInit {
 
   private wizardStepList: NodeList[];
+  private currentStepNumber = 0;
   @ViewChild('contentWrapper') content: ElementRef;
   constructor() { }
 
@@ -17,11 +17,29 @@ export class WizardComponent implements OnInit, AfterViewInit {
     this.wizardStepList = this.content.nativeElement.childNodes[0].childNodes;
   }
 
-  ngAfterViewInit() {
-    console.log(this.wizardStepList);
-    // this.content.nativeElement.childNodes[0].style.display = 'none';
-    // var textNode = this.elt.nativeElement.childNodes[0];
-    // var textInput = textNode.nodeValue;
-    // this.renderer.setText(textNode, textInput.toUpperCase());
+  nextStep(): void {
+    if (this.currentStepNumber < this.wizardStepList.length - 1) {
+      this.currentStepNumber++;
+      $('.ng-wizard-step--countainer').animate(
+        {
+          'margin-left': -50 * this.currentStepNumber + '%'
+        }
+      );
+    }
+  }
+
+  previousStep(): void {
+    if (this.currentStepNumber > 0) {
+      this.currentStepNumber--;
+      $('.ng-wizard-step--countainer').animate(
+        {
+          'margin-left': -50 * this.currentStepNumber + '%'
+        }
+      );
+    }
+  }
+
+  jumpToStep(stepNumber: number): void {
+
   }
 }

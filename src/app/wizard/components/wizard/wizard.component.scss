@@ -1,4 +1,6 @@
-.ngw-wizard--countainer {}
+.ngw-wizard--countainer {
+  overflow: hidden;
+}
 
 .ngw-wizard--header {
   // display: flex;
@@ -43,4 +45,9 @@
   top: 50%;
   width: calc(100% - 4px);
   border: 1px solid;
+}
+
+.ng-wizard-step--countainer {
+  display: flex;
+  justify-content: space-between;
 }

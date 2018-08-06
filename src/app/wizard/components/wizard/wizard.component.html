@@ -1,0 +1,21 @@
+<div class="ngw-wizard--countainer">
+  <div class="ngw-wizard--header ">
+    <div *ngIf="wizardStepList" class="ngw-circle--countainer">
+      <span *ngFor="let wizardStep of wizardStepList; let i = index" class="ngw-circle">
+        {{i + 1}}
+      </span>
+    </div>
+    <div class="ngw-line">
+    </div>
+  </div>
+  <div class="ngw-wizard--body" #contentWrapper>
+    <div class="ng-wizard-step--countainer" [style.width.%]="wizardStepList.length * 100">
+      <ng-content select="ng-wizard-step">
+        
+      </ng-content>
+    </div>
+  </div>
+  <div class="ngw-wizard--footer">
+
+  </div>
+</div>

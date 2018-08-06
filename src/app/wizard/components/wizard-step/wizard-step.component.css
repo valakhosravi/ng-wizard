@@ -1,0 +1,8 @@
+:host {
+    display: inline-block;
+    width: 100%;
+}
+
+.ng-wizard-step--countainer {
+    width: 100%;
+}

@@ -1,11 +1,14 @@
 <div class="ngw-wizard--countainer">
   <div class="ngw-wizard--header ">
     <div *ngIf="wizardStepList" class="ngw-circle--countainer">
-      <span *ngFor="let wizardStep of wizardStepList; let i = index" [ngClass]="
-      i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : ''
-      " class="ngw-circle">
-        {{i + 1}}
-      </span>
+      <div *ngFor="let wizardStep of wizardStepList; let i = index">
+        <span [ngClass]="i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : ''" class="ngw-circle">
+          {{i + 1}}
+        </span>
+        <span [ngClass]="i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : ''" class="ngw-step--title">
+          {{wizardStep.title}}
+        </span>
+      </div>
     </div>
     <div class="ngw-line"></div>
     <div class="ngw-line-progress" [style.width.%]="currentStepNumber * (100 / (wizardStepList.length - 1))"></div>

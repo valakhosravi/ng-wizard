@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, QueryList, ContentChildren, AfterContentInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, ContentChildren, AfterContentInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 @Component({
@@ -10,13 +10,13 @@ import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 export class WizardComponent implements OnInit, AfterContentInit {
 
   // private wizardStepList: any;
+  @Input() fastForward: Boolean;
   private currentStepNumber = 0;
   @ViewChild('contentWrapper') content: ElementRef;
   @ContentChildren(WizardStepComponent) wizardStepList;
   constructor() { }
 
   ngOnInit() {
-    // this.wizardStepList = this.content.nativeElement.childNodes[0].childNodes;
   }
 
   ngAfterContentInit() {
@@ -51,7 +51,8 @@ export class WizardComponent implements OnInit, AfterContentInit {
     );
   }
 
-  jumpToStep(stepNumber: number): void {
-    // think about it
+  jumpToStep(stepNumber): void {
+    this.currentStepNumber = stepNumber;
+    this.moveStep();
   }
 }

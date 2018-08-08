@@ -2,10 +2,12 @@
   <div class="ngw-wizard--header ">
     <div *ngIf="wizardStepList" class="ngw-circle--countainer">
       <div *ngFor="let wizardStep of wizardStepList; let i = index" [ngClass]="fastForward ? 'cursor-pointer' : ''" (click)="jumpToStep(i)">
-        <span [ngClass]="i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : ''" class="ngw-circle">
+        <span [ngClass]="[i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : '', i === warningIndex ? 'warning' : i === errorIndex ? 'error' : '']"
+          class="ngw-circle">
           {{i + 1}}
         </span>
-        <span [ngClass]="i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : ''" class="ngw-step--title">
+        <span [ngClass]="[i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : '', i === warningIndex ? 'warning' : i === errorIndex ? 'error' : '']"
+          class="ngw-step--title">
           {{wizardStep.title}}
         </span>
       </div>
@@ -16,7 +18,7 @@
   <div class="ngw-wizard--body" #contentWrapper>
     <div class="ng-wizard-step--countainer" [style.width.%]="wizardStepList.length * 100">
       <ng-content select="ng-wizard-step">
-        
+
       </ng-content>
     </div>
   </div>

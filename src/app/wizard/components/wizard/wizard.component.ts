@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild, ContentChildren, AfterContentInit, Input } from '@angular/core';
 import * as $ from 'jquery';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'ng-wizard',
   templateUrl: './wizard.component.html',
@@ -14,6 +15,9 @@ export class WizardComponent implements OnInit, AfterContentInit {
   private currentStepNumber = 0;
   @ViewChild('contentWrapper') content: ElementRef;
   @ContentChildren(WizardStepComponent) wizardStepList;
+  routerEventsSubscription;
+  warningIndex = -1;
+  errorIndex = -1;
   constructor() { }
 
   ngOnInit() {
@@ -25,7 +29,6 @@ export class WizardComponent implements OnInit, AfterContentInit {
       temp.push(wizardStep);
     });
     this.wizardStepList = temp;
-    console.log(this.wizardStepList);
   }
 
   nextStep(): void {
@@ -43,7 +46,6 @@ export class WizardComponent implements OnInit, AfterContentInit {
   }
 
   private moveStep() {
-    console.log(this.wizardStepList);
     $('.ng-wizard-step--countainer').animate(
       {
         'margin-left': -50 * this.currentStepNumber + '%'
@@ -54,5 +56,21 @@ export class WizardComponent implements OnInit, AfterContentInit {
   jumpToStep(stepNumber): void {
     this.currentStepNumber = stepNumber;
     this.moveStep();
+  }
+
+  error(status: boolean) {
+    if (status) {
+      this.errorIndex = this.currentStepNumber;
+    } else {
+      this.errorIndex = -1;
+    }
+  }
+
+  warning(status: boolean) {
+    if (status) {
+      this.warningIndex = this.currentStepNumber;
+    } else {
+      this.warningIndex = -1;
+    }
   }
 }

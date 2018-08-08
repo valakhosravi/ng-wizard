@@ -5,7 +5,7 @@
 .ngw-wizard--header {
   height: 34px;
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .ngw-circle--countainer {
@@ -76,6 +76,14 @@
 
 .current {
   color: #76FF03;
+}
+
+.warning {
+  color: #FFEB3B
+}
+
+.error {
+  color: #f44336;
 }
 
 error {}

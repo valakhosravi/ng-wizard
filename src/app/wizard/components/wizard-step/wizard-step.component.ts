@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WizardStepComponent implements OnInit {
   @Input() title = '';
+  @Input() route?;
   constructor() { }
 
   ngOnInit() {

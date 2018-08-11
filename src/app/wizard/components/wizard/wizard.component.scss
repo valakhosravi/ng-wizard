@@ -28,7 +28,7 @@
   transition: .4s color;
   display: inline-block;
   background-color: #ffffff;
-  color: rgba(0, 0, 0, .26);
+  color: #bbbbbb;
   border: 2px solid;
   width: 30px;
   height: 30px;
@@ -41,7 +41,7 @@
   z-index: 1;
   position: absolute;
   display: inline-block;
-  color: rgba(0, 0, 0, .26);
+  color: #bbbbbb;
   top: 50%;
   width: calc(100% - 4px);
   border: 1px solid;
@@ -52,7 +52,7 @@
   z-index: 2;
   position: absolute;
   display: inline-block;
-  color: rgba(0, 0, 0, .26);
+  color: #bbbbbb;
   top: 50%;
   border: 1px solid;
   color: #64DD17;

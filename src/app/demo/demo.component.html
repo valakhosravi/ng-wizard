@@ -1,6 +1,9 @@
 <div class="ngw-screen">
   <div class="side-bar--countainer">
     <div class="ngw-header">
+      <button mat-icon-button style="float: right;" (click)="onCloseMenuClick()">
+        <mat-icon>close</mat-icon>
+      </button>
       <h1>
         NG-
         <strong>WIZARD</strong>
@@ -9,6 +12,9 @@
       <h4>
         POWERFUL WIZARD PACKAGE FOR ANGULAR
       </h4>
+    </div>
+    <div class="ngw-body">
+
     </div>
   </div>
   <div class="mat-card--countainer">
@@ -44,4 +50,7 @@
       </ng-wizard>
     </mat-card>
   </div>
+  <button mat-fab class="ngw-nav--button" (click)="onOpenMenuClick()">
+    <mat-icon>menu</mat-icon>
+  </button>
 </div>

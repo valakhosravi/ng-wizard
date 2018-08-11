@@ -28,6 +28,11 @@
   }
 }
 
+.ngw-side-bar--close-btn {
+  display: none;
+  float: right;
+}
+
 .ngw-body {
   height: 100%;
   width: 100%;
@@ -62,6 +67,9 @@
     width: 100%;
   }
   .ngw-nav--button {
+    display: block;
+  }
+  .ngw-side-bar--close-btn {
     display: block;
   }
 }

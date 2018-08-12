@@ -19,3 +19,12 @@ body {
 .cursor-pointer {
   cursor: pointer!important;
 }
+
+/* overrides */
+.mat-expansion-panel-spacing {
+  margin: 0!important;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none!important;
+}

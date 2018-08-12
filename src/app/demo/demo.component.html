@@ -14,7 +14,70 @@
       </h4>
     </div>
     <div class="ngw-body">
+      <mat-accordion multi="true">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Navigation bar
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+              Type your name and age
+            </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <mat-list>
+            <h3 mat-subheader>Display</h3>
+            <mat-list-item>
+              <mat-checkbox>
+                No navigation
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox>
+                Bullet
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox>
+                Number
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox>
+                Icon
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <h3 mat-subheader>Features</h3>
+            <mat-list-item>
+              <mat-checkbox>
+                Right to left
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox>
+                Fast forward
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox disabled="true">
+                Infinit steps
+              </mat-checkbox>
+            </mat-list-item>
 
+          </mat-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+            <mat-panel-description>
+              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
     </div>
   </div>
   <div class="mat-card--countainer">

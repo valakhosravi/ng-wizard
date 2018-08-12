@@ -12,6 +12,7 @@ import {
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WizardModule } from './wizard/wizard.module';
+import { DemoService } from './demo/demo.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { WizardModule } from './wizard/wizard.module';
 
     WizardModule,
   ],
-  providers: [],
+  providers: [
+    DemoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

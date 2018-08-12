@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { DemoService } from './demo.service';
 @Component({
   selector: 'ng-demo',
   templateUrl: './demo.component.html',
@@ -7,7 +8,9 @@ import * as $ from 'jquery';
 })
 export class DemoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private demoService: DemoService
+  ) { }
 
   ngOnInit() {
   }
@@ -22,4 +25,8 @@ export class DemoComponent implements OnInit {
       'left': '-110%'
     });
   }
+  refreshWizardConfig() {
+    this.demoService.updateWizardConfig('test');
+  }
+
 }

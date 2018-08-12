@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, ContentChildren, AfterContent
 import * as $ from 'jquery';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { DemoService } from '../../../demo/demo.service';
 @Component({
   selector: 'ng-wizard',
   templateUrl: './wizard.component.html',
@@ -18,9 +19,16 @@ export class WizardComponent implements OnInit, AfterContentInit {
   routerEventsSubscription;
   warningIndex = -1;
   errorIndex = -1;
-  constructor() { }
+  constructor(
+    private demoService: DemoService
+  ) { }
 
   ngOnInit() {
+    this.demoService.wizardConfig.subscribe(
+      data => {
+        console.log('object', data);
+      }
+    );
   }
 
   ngAfterContentInit() {

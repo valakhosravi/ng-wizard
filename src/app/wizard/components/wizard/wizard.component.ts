@@ -12,10 +12,17 @@ import { DemoService } from '../../../demo/demo.service';
 export class WizardComponent implements OnInit, AfterContentInit {
 
   // private wizardStepList: any;
+  @Input() ltr: Boolean;
+  @Input() style: Boolean;
+  @Input() display: Boolean;
   @Input() fastForward: Boolean;
-  private currentStepNumber = 0;
+  @Input() navigationBarDisplay: Boolean;
+
   @ViewChild('contentWrapper') content: ElementRef;
   @ContentChildren(WizardStepComponent) wizardStepList;
+
+  private currentStepNumber = 0;
+
   routerEventsSubscription;
   warningIndex = -1;
   errorIndex = -1;

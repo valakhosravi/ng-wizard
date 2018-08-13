@@ -1,5 +1,5 @@
 <div class="ngw-wizard--countainer">
-  <div class="ngw-wizard--header ">
+  <div *ngIf="visibility" class="ngw-wizard--header">
     <div *ngIf="wizardStepList" class="ngw-circle--countainer">
       <div *ngFor="let wizardStep of wizardStepList; let i = index" [ngClass]="fastForward ? 'cursor-pointer' : ''" (click)="jumpToStep(i)">
         <span [ngClass]="[i < currentStepNumber ? 'active' : i === currentStepNumber ? 'current' : '', i === warningIndex ? 'warning' : i === errorIndex ? 'error' : '']"

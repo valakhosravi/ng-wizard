@@ -23,7 +23,7 @@
           </mat-expansion-panel-header> -->
           <mat-list>
             <mat-list-item>
-              <mat-checkbox (click)="refreshWizardConfig()">
+              <mat-checkbox [(ngModel)]='visibility' (click)="refreshWizardConfig('visibility')">
                 Remove Navigation Bar
               </mat-checkbox>
             </mat-list-item>

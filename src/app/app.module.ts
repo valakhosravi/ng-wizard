@@ -11,6 +11,8 @@ import {
 } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 import { WizardModule } from './wizard/wizard.module';
 import { DemoService } from './demo/demo.service';
 
@@ -20,6 +22,7 @@ import { DemoService } from './demo/demo.service';
     DemoComponent,
   ],
   imports: [
+    FormsModule,
     AppRoutingModule,
     BrowserModule,
 

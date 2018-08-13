@@ -8,6 +8,12 @@ import { DemoService } from './demo.service';
 })
 export class DemoComponent implements OnInit {
 
+  ltr;
+  style;
+  visibility = false;
+  display;
+  fastForward;
+
   constructor(
     private demoService: DemoService
   ) { }
@@ -25,8 +31,10 @@ export class DemoComponent implements OnInit {
       'left': '-110%'
     });
   }
-  refreshWizardConfig() {
-    this.demoService.updateWizardConfig('test');
+  refreshWizardConfig(key) {
+    const temp = {};
+    temp[key] = this[key];
+    this.demoService.updateWizardConfig(temp);
   }
 
 }

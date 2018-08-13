@@ -13,10 +13,10 @@ export class WizardComponent implements OnInit, AfterContentInit {
 
   // private wizardStepList: any;
   @Input() ltr: Boolean;
-  @Input() style: Boolean;
-  @Input() display: Boolean;
+  @Input() style: String = 'out-line'; // filled, two-tone, sharp
+  @Input() visibility: Boolean = true;
+  @Input() display: String = 'number'; // bullet, icon
   @Input() fastForward: Boolean;
-  @Input() navigationBarDisplay: Boolean;
 
   @ViewChild('contentWrapper') content: ElementRef;
   @ContentChildren(WizardStepComponent) wizardStepList;
@@ -33,7 +33,10 @@ export class WizardComponent implements OnInit, AfterContentInit {
   ngOnInit() {
     this.demoService.wizardConfig.subscribe(
       data => {
-        console.log('object', data);
+        // tslint:disable-next-line:forin
+        for (const key in data) {
+          this[key] = data[key];
+        }
       }
     );
   }

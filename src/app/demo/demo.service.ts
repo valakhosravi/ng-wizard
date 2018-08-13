@@ -12,7 +12,6 @@ export class DemoService {
   constructor() { }
 
   public updateWizardConfig(newWizardConfig) {
-    console.log('service', newWizardConfig);
     this.wizardConfigSource.next(newWizardConfig);
   }
 }

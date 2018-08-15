@@ -37,4 +37,7 @@ export class DemoComponent implements OnInit {
     this.demoService.updateWizardConfig(temp);
   }
 
+  onFirtsStepNextClick() {
+  }
+
 }

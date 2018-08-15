@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import { WizardStepComponent } from '../wizard-step/wizard-step.component';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { DemoService } from '../../../demo/demo.service';
+import { WizardService } from '../../wizard.service';
 @Component({
   selector: 'ng-wizard',
   templateUrl: './wizard.component.html',
@@ -27,10 +28,16 @@ export class WizardComponent implements OnInit, AfterContentInit {
   warningIndex = -1;
   errorIndex = -1;
   constructor(
-    private demoService: DemoService
+    private demoService: DemoService,
+    private wizardService: WizardService
   ) { }
 
   ngOnInit() {
+    this.wizardService.wizardStep.subscribe(
+      data => {
+        console.log('wizardService', data);
+      }
+    );
     this.demoService.wizardConfig.subscribe(
       data => {
         // tslint:disable-next-line:forin

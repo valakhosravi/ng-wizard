@@ -5,7 +5,9 @@
         <mat-icon>arrow_back</mat-icon>
       </button>
       <h1>
-        NG-<strong>WIZARD</strong><small> 0.1</small>
+        NG-
+        <strong>WIZARD</strong>
+        <small> 0.1</small>
       </h1>
       <h4>
         POWERFUL WIZARD PACKAGE FOR ANGULAR
@@ -19,69 +21,69 @@
               Navigation bar
             </mat-panel-title>
           </mat-expansion-panel-header> -->
-          <mat-list>
-            <mat-list-item>
-              <mat-checkbox [(ngModel)]='visibility' (click)="refreshWizardConfig('visibility')">
-                Remove Navigation Bar
-              </mat-checkbox>
-            </mat-list-item>
-            <h3 mat-subheader>Display</h3>
-            <mat-list-item>
-              <mat-checkbox>
-                Bullet
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Number
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Icon
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <h3 mat-subheader>style</h3>
-            <mat-list-item>
-              <mat-checkbox>
-                Outlined
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Filled
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Two-Tone
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Sharp
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <h3 mat-subheader>Features</h3>
-            <mat-list-item>
-              <mat-checkbox>
-                Right to Left
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Fast Forward
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox disabled="true">
-                Infinit Steps
-              </mat-checkbox>
-            </mat-list-item>
-          </mat-list>
-        <!-- </mat-expansion-panel>
+      <mat-list>
+        <mat-list-item>
+          <mat-checkbox [(ngModel)]='visibility' (click)="refreshWizardConfig('visibility')">
+            Remove Navigation Bar
+          </mat-checkbox>
+        </mat-list-item>
+        <h3 mat-subheader>Display</h3>
+        <mat-list-item>
+          <mat-checkbox>
+            Bullet
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Number
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Icon
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>style</h3>
+        <mat-list-item>
+          <mat-checkbox>
+            Outlined
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Filled
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Two-Tone
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Sharp
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Features</h3>
+        <mat-list-item>
+          <mat-checkbox>
+            Right to Left
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Fast Forward
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox disabled="true">
+            Infinit Steps
+          </mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+      <!-- </mat-expansion-panel>
         <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
@@ -100,13 +102,45 @@
     <mat-card class="ngw-card">
       <ng-wizard fastForward="true">
         <ng-wizard-step title="1st" route="first">
-          <p>
-            The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son
-            ichael has just come home from the war, but does not intend to become part of his father's business. T hrough
-            Michael's life the nature of the family business becomes clear. The business of the family is just like the head
-            of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything
-            stands against the good of the family.
+          <p class="mat-body-1">
+            Hello, welcome to the superhero world. Pick up your superpowers and press the next button.
           </p>
+          <p class="mat-caption">
+            At least pick
+            <b>
+              one
+            </b>
+            superpower
+          </p>
+
+          <mat-list>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Flight
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Invisibility
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Super Speed
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Size Shifting
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Mind Control
+              </mat-checkbox>
+            </mat-list-item>
+          </mat-list>
+          <button mat-flat-button style="float: right;" (click)="onFirtsStepNextClick()">Next</button>
         </ng-wizard-step>
         <ng-wizard-step title="2nd" route="second">
           <p>

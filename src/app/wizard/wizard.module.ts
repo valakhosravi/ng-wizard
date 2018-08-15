@@ -6,6 +6,7 @@ import { WizardStepComponent } from './components/wizard-step/wizard-step.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { WizardService } from './wizard.service';
 
 @NgModule({
   imports: [
@@ -22,5 +23,8 @@ import { RouterModule } from '@angular/router';
     WizardComponent,
     WizardStepComponent,
   ],
+  providers: [
+    WizardService
+  ]
 })
 export class WizardModule { }

@@ -11,7 +11,7 @@ export class DemoService {
 
   constructor() { }
 
-  public updateWizardConfig(newWizardConfig) {
+  public updateWizardConfig(newWizardConfig): void {
     this.wizardConfigSource.next(newWizardConfig);
   }
 }

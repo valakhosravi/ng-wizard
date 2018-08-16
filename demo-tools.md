@@ -5,6 +5,7 @@ options
 4. fast forward
 5. dynamic steps length
 6. use font icon instead of number
+7. check icon on every passed steps
 
 code generator
 1. add and remove step

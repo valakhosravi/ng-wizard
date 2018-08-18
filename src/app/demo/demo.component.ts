@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import * as $ from 'jquery';
 import { DemoService } from './demo.service';
 @Component({
@@ -6,7 +6,9 @@ import { DemoService } from './demo.service';
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.scss']
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent implements OnInit, AfterContentInit {
+
+  @ViewChild('ngWizard') ngWizard;
 
   ltr;
   style;
@@ -19,6 +21,9 @@ export class DemoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  ngAfterContentInit() {
   }
 
   onOpenMenuClick() {
@@ -37,4 +42,11 @@ export class DemoComponent implements OnInit {
     this.demoService.updateWizardConfig(temp);
   }
 
+  onFirstStepNextClick() {
+    this.ngWizard.nextStep();
+  }
+
+  onBackClick() {
+    this.ngWizard.previousStep();
+  }
 }

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {
   MatCardModule, MatButtonModule, MatPaginatorModule, MatIconModule,
-  MatExpansionModule, MatCheckboxModule, MatListModule
+  MatExpansionModule, MatCheckboxModule, MatListModule, MatInputModule
 } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +29,7 @@ import { DemoService } from './demo/demo.service';
     MatListModule,
     MatIconModule,
     MatCardModule,
+    MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
     MatPaginatorModule,

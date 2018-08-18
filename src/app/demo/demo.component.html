@@ -5,7 +5,9 @@
         <mat-icon>arrow_back</mat-icon>
       </button>
       <h1>
-        NG-<strong>WIZARD</strong><small> 0.1</small>
+        NG-
+        <strong>WIZARD</strong>
+        <small> 0.1</small>
       </h1>
       <h4>
         POWERFUL WIZARD PACKAGE FOR ANGULAR
@@ -13,110 +15,140 @@
     </div>
     <div class="ngw-body">
       <!-- <mat-accordion multi="true">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Navigation bar
-            </mat-panel-title>
-          </mat-expansion-panel-header> -->
-          <mat-list>
-            <mat-list-item>
-              <mat-checkbox [(ngModel)]='visibility' (click)="refreshWizardConfig('visibility')">
-                Remove Navigation Bar
-              </mat-checkbox>
-            </mat-list-item>
-            <h3 mat-subheader>Display</h3>
-            <mat-list-item>
-              <mat-checkbox>
-                Bullet
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Number
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Icon
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <h3 mat-subheader>style</h3>
-            <mat-list-item>
-              <mat-checkbox>
-                Outlined
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Filled
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Two-Tone
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Sharp
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <h3 mat-subheader>Features</h3>
-            <mat-list-item>
-              <mat-checkbox>
-                Right to Left
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox>
-                Fast Forward
-              </mat-checkbox>
-            </mat-list-item>
-            <mat-list-item>
-              <mat-checkbox disabled="true">
-                Infinit Steps
-              </mat-checkbox>
-            </mat-list-item>
-          </mat-list>
-        <!-- </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Self aware panel
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-      </mat-accordion> -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Navigation bar
+              </mat-panel-title>
+            </mat-expansion-panel-header> -->
+      <mat-list>
+        <mat-list-item>
+          <mat-checkbox [(ngModel)]='visibility' (click)="refreshWizardConfig('visibility')">
+            Remove Navigation Bar
+          </mat-checkbox>
+        </mat-list-item>
+        <h3 mat-subheader>Display</h3>
+        <mat-list-item>
+          <mat-checkbox>
+            Bullet
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Number
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Icon
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>style</h3>
+        <mat-list-item>
+          <mat-checkbox>
+            Outlined
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Filled
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Two-Tone
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Sharp
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Features</h3>
+        <mat-list-item>
+          <mat-checkbox>
+            Right to Left
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox>
+            Fast Forward
+          </mat-checkbox>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-checkbox disabled="true">
+            Infinit Steps
+          </mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+      <!-- </mat-expansion-panel>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Self aware panel
+              </mat-panel-title>
+              <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>I'm visible because I am open</p>
+          </mat-expansion-panel>
+        </mat-accordion> -->
     </div>
   </div>
   <div class="mat-card--countainer">
     <mat-card class="ngw-card">
-      <ng-wizard fastForward="true">
+      <ng-wizard #ngWizard fastForward="true">
         <ng-wizard-step title="1st" route="first">
-          <p>
-            The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son
-            ichael has just come home from the war, but does not intend to become part of his father's business. T hrough
-            Michael's life the nature of the family business becomes clear. The business of the family is just like the head
-            of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything
-            stands against the good of the family.
+          <p class="mat-body-1">
+            Hello, welcome to the superhero world. Pick up your superpowers and press the next button.
           </p>
+          <mat-list>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Flight
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Invisibility
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Super Speed
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Size Shifting
+              </mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-checkbox class="mat-body-1">
+                Mind Control
+              </mat-checkbox>
+            </mat-list-item>
+          </mat-list>
+          <button mat-flat-button style="float: right;" (click)="onFirstStepNextClick()">Next</button>
         </ng-wizard-step>
         <ng-wizard-step title="2nd" route="second">
-          <p>
-            Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito
-            Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of
-            the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local
-            Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood
-            in Little Italy, killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business.
-            With Fanucci gone, Vito's communal stature grows.
+          <p class="mat-body-1">
+            It seems like now you are strong enough to save the world. please leave your name and your email, we will contact you if
+            Godzilla attacked or something bad happened.
           </p>
+          <form style="height: calc(100% - 124px);">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Your Name">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Your Email">
+            </mat-form-field>
+          </form>
+          <button style="float: right;" (click)="onFirstStepNextClick()" mat-flat-button>Next</button>
+          <button style="float: right;" (click)="onBackClick()" mat-button>Back</button>
         </ng-wizard-step>
         <ng-wizard-step title="3rd" route="third">
           <p>

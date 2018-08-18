@@ -28,3 +28,7 @@ body {
 .mat-expansion-panel:not([class*=mat-elevation-z]) {
   box-shadow: none!important;
 }
+
+.mat-form-field-infix {
+  width: unset!important;
+}

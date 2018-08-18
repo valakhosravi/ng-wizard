@@ -59,6 +59,7 @@
 }
 
 .ng-wizard-step--countainer {
+  height: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -85,5 +86,3 @@
 .error {
   color: #f44336;
 }
-
-error {}

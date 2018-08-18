@@ -55,7 +55,7 @@
 @media only screen and (max-width: 600px) {
   .ngw-card {
     width: 100%;
-    margin: 8px;
+    margin: 0px;
   }
   .side-bar--countainer {
     left: -110%;
@@ -72,4 +72,14 @@
   .ngw-side-bar--close-btn {
     display: block;
   }
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
 }

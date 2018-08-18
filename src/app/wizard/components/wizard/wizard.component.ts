@@ -49,14 +49,14 @@ export class WizardComponent implements OnInit, AfterContentInit {
     this.wizardStepList = temp;
   }
 
-  nextStep(): void {
+  public nextStep(): void {
     if (this.currentStepNumber < this.wizardStepList.length - 1) {
       this.currentStepNumber++;
       this.moveStep();
     }
   }
 
-  previousStep(): void {
+  public previousStep(): void {
     if (this.currentStepNumber > 0) {
       this.currentStepNumber--;
       this.moveStep();
@@ -71,7 +71,7 @@ export class WizardComponent implements OnInit, AfterContentInit {
     );
   }
 
-  jumpToStep(stepNumber): void {
+  public jumpToStep(stepNumber): void {
     this.currentStepNumber = stepNumber;
     this.moveStep();
   }

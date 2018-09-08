@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-wizard-lib": [
+        "dist/ng-wizard-lib"
+      ],
+      "ng-wizard-lib/*": [
+        "dist/ng-wizard-lib/*"
+      ]
+    }
   }
 }

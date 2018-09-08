@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ng-wizard-lib": {
+      "root": "projects/ng-wizard-lib",
+      "sourceRoot": "projects/ng-wizard-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-wizard-lib/tsconfig.lib.json",
+            "project": "projects/ng-wizard-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng-wizard-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-wizard-lib/src/test.ts",
+            "tsConfig": "projects/ng-wizard-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-wizard-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-wizard-lib/tsconfig.lib.json",
+              "projects/ng-wizard-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-wizard"
